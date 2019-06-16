@@ -28,7 +28,8 @@ namespace EfCommands
             {
                 Id = image.Id,
                 Url = image.Url,
-                GoodId = image.GoodId
+                GoodId = image.GoodId,
+                GoodTitle = image.Good.Title
             };
         }
     }

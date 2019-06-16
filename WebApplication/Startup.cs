@@ -61,6 +61,11 @@ namespace WebApplication
             services.AddTransient<IEditAuction, EfEditAuction>();
             services.AddTransient<IDelete, EfDeleteAuction>();
 
+            services.AddTransient<IShowImages, EfShowImages>();
+            services.AddTransient<IAddImage, EfAddImage>();
+            services.AddTransient<IShowImage, EfShowImage>();
+            services.AddTransient<IDelete, EfDeleteImage>();
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

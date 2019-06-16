@@ -19,7 +19,7 @@ namespace EfCommands
         public AuctionGoodAuctioner Execute(int request)
         {
             var auction = Context.Auctions.AsQueryable();
-            //proba
+            
             auction = auction.Where(a => a.Id == request).Include(a => a.Auctioner).Include(a => a.Good);
 
             return auction.Select(a => new AuctionGoodAuctioner

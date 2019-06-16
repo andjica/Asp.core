@@ -12,5 +12,7 @@ namespace Aplication.Dto.Image
         public string  Url { get; set; }
 
         public int GoodId { get; set; }
+
+        public string GoodTitle { get; set; }
     }
 }

@@ -23,7 +23,8 @@ namespace EfCommands
             {
                 Id = c.Id,
                 Url = c.Url,
-                GoodId = c.GoodId
+                GoodId = c.GoodId,
+                GoodTitle = c.Good.Title
             });
         }
     }
