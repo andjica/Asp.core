@@ -1,0 +1,58 @@
+﻿@model Aplication.Dto.Auction.AddWAuction
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>AddWAuction</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="AuctionerId" class="control-label">Add some Auctioner</label>
+                <select name="AuctionerId">
+                    <option value="0">Izaberi</option>
+                    @foreach (var a in ViewBag.Auctioners)
+                    {
+                        <option value="@a.Id">@a.FirstName @a.LastName</option>
+                    }
+                </select>
+                <span asp-validation-for="AuctionerId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="GoodId" class="control-label">Add some Good</label>
+                <select name="GoodId">
+
+                    <option value="0">Izaberi</option>
+                    @foreach (var g in ViewBag.Goods)
+                    {
+                        <option value="@g.Id">@g.Title (first price: @g.FirstPrice)</option>
+                    }
+
+
+                </select>
+                <span asp-validation-for="GoodId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="MaxPrice" class="control-label"></label>
+                <input asp-for="MaxPrice" class="form-control" />
+                <span asp-validation-for="MaxPrice" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

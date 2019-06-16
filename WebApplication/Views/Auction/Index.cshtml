@@ -1,0 +1,89 @@
+﻿@model IEnumerable<Aplication.Dto.Auction.AuctionGoodAuctioner>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Id)
+            </th>
+            <th class="d-none">
+                @Html.DisplayNameFor(model => model.GoodTtile)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.GoodId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.GoodCreateAt)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.GoodFirstPrice)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.AuctionerFirstName)
+            </th>
+            <th class="d-none">
+                @Html.DisplayNameFor(model => model.AuctionerLastName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.AuctionerId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.MaxPrice)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ValidUntil)
+            </th>
+            <th>EDIT/DELETE</th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Id)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.GoodTtile)
+            </td>
+            <td class="d-none">
+                @Html.DisplayFor(modelItem => item.GoodId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.GoodCreateAt)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.GoodFirstPrice)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.AuctionerFirstName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.AuctionerLastName)
+            </td>
+            <td class="d-none">
+                @Html.DisplayFor(modelItem => item.AuctionerId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MaxPrice)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ValidUntil)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.Id }) |
+                @Html.ActionLink("Details", "Details", new { id = item.Id }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.Id })
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
