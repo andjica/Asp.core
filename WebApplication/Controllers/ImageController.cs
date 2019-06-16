@@ -13,7 +13,8 @@ using Aplication.SearchEntity;
 
 namespace WebApplication.Controllers
 {
-    public class ImageController : Controller
+    public class 
+        ImageController : Controller
     {
         private readonly IAddImage _addimage;
         private readonly IShowImages _shimages;
@@ -47,7 +48,14 @@ namespace WebApplication.Controllers
             // GET: Image/Details/5
         public ActionResult Details(int id)
         {
-            return View();
+            try {
+                var image = _shimage.Execute(id);
+                return View(image);
+            }
+            catch (Exception)
+            {
+                return StatusCode(500);
+            }
         }
 
         // GET: Image/Create
