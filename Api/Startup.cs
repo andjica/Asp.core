@@ -47,14 +47,14 @@ namespace Api
             services.AddTransient<IShowCategoryGood, EfShowCategoryGood>();
             services.AddTransient<IAddCategory, EfAddCategory>();
             services.AddTransient<IEditCategory, EfEditCategory>();
-            services.AddTransient<IDelete, EfDeleteCategory>();
+            services.AddTransient<IDeleteCategory, EfDeleteCategory>();
 
             //Goods
             services.AddTransient<IShowGoodsCategory, EfShowGoodsCategory>();
             services.AddTransient<IShowGood, EfShowGood>();
             services.AddTransient<IAddGood, EfAddGood>();
             services.AddTransient<IEditGood, EfEditGood>();
-            services.AddTransient<IDelete, EfDeleteGood>();
+            services.AddTransient<IDeleteGood, EfDeleteGood>();
             
 
             //Auctions
@@ -62,27 +62,27 @@ namespace Api
             services.AddTransient<IShowAuctionGoodAuctioner, EfShowAuctionGoodAuctioner>();
             services.AddTransient<IShowAuction, EfShowAuction>();
             services.AddTransient<IEditAuction, EfEditAuction>();
-            services.AddTransient<IDelete, EfDeleteAuction>();
+            services.AddTransient<IDeleteAuction, EfDeleteAuction>();
 
             //Auctioners
             services.AddTransient<IAddAuctioner, EfAddAuctioner>();
             services.AddTransient<IShowAuctioners, EfShowAuctioners>();
             services.AddTransient<IShowAuctioner, EfShowAuctioner>();
             services.AddTransient<IEditAuctioner, EfEditAuctioner>();
-            services.AddTransient<IDelete, EfDeleteAuctioner>();
+            services.AddTransient<IDeleteAuctioner, EfDeleteAuctioner>();
 
             //Roles
             services.AddTransient<IShowRoles, EfShowRoles>();
             services.AddTransient<IShowRole, EfShowRole>();
             services.AddTransient<IAddRole, EfAddRole>();
             services.AddTransient<IEditRole, EfEditRole>();
-            services.AddTransient<IDelete, EfDeleteRole>();
+            services.AddTransient<IDeleteRole, EfDeleteRole>();
 
             //Images
             services.AddTransient<IShowImages, EfShowImages>();
             services.AddTransient<IAddImage, EfAddImage>();
             services.AddTransient<IShowImage, EfShowImage>();
-            services.AddTransient<IDelete, EfDeleteImage>();
+            services.AddTransient<IDeleteImage, EfDeleteImage>();
 
             //paginate Auction
             services.AddTransient<IPaginateAuctions, EfPaginateAuction>();

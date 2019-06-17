@@ -7,7 +7,7 @@ using EfDataAccess;
 
 namespace EfCommands.EfDelete
 {
-    public class EfDeleteCategory : EfBase, IDelete
+    public class EfDeleteCategory : EfBase, IDeleteCategory
     {
         public EfDeleteCategory(AuctionContext context) : base(context)
         {
@@ -15,11 +15,12 @@ namespace EfCommands.EfDelete
 
         public void Execute(int request)
         {
+
             var category = Context.Categories.Find(request);
 
             if (category == null)
             {
-                throw new EntityNotFound();
+                throw new EntityNotFound("Category");
             }
 
             Context.Categories.Remove(category);

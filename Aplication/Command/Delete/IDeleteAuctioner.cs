@@ -5,7 +5,7 @@ using Aplication.Interface;
 
 namespace Aplication.Command.Delete
 {
-    public interface IDelete : ICommand<int>
+    public interface IDeleteAuctioner : ICommand<int>
     {
     }
 }

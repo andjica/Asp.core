@@ -11,13 +11,18 @@ namespace Aplication.Dto.Auction
 
         public int AuctionerId { get; set; }
 
+        public string FirstName { get; set; }
+
+        public string LastName { get; set; }
 
         public int GoodId { get; set; }
 
+        public string GoodTitle { get; set; }
 
+        public DateTime? CreateAt { get; set; }
         public DateTime? ValidUntil { get; set; }
 
-
+        
         public decimal? MaxPrice { get; set; }
 
     }

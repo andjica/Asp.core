@@ -22,9 +22,9 @@ namespace Api.Controllers
         private readonly IShowRole _shrole;
         private readonly IAddRole _addrole;
         private readonly IEditRole _editrole;
-        private readonly IDelete _deleterole;
+        private readonly IDeleteRole _deleterole;
 
-        public RoleController(IShowRoles shroles, IShowRole shrole, IAddRole addrole, IEditRole editrole, IDelete deleterole)
+        public RoleController(IShowRoles shroles, IShowRole shrole, IAddRole addrole, IEditRole editrole, IDeleteRole deleterole)
         {
             _shroles = shroles;
             _shrole = shrole;
@@ -32,6 +32,8 @@ namespace Api.Controllers
             _editrole = editrole;
             _deleterole = deleterole;
         }
+
+
 
 
 

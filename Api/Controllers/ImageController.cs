@@ -24,15 +24,17 @@ namespace Api.Controllers
         private readonly IAddImage _addimage;
         private readonly IShowImages _shimages;
         private readonly IShowImage _shimage;
-        private readonly IDelete _deleteimage;
+        private readonly IDeleteImage _deleteimage;
 
-        public ImageController(IAddImage addimage, IShowImages shimages, IShowImage shimage, IDelete deleteimage)
+        public ImageController(IAddImage addimage, IShowImages shimages, IShowImage shimage, IDeleteImage deleteimage)
         {
             _addimage = addimage;
             _shimages = shimages;
             _shimage = shimage;
             _deleteimage = deleteimage;
         }
+
+
 
 
 

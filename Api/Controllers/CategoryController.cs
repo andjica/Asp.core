@@ -24,9 +24,9 @@ namespace Api.Controllers
         private readonly IShowCategory _shcategory;
         private readonly IAddCategory _addcategory;
         private readonly IEditCategory _editcatogry;
-        private readonly IDelete _deletecategory;
+        private readonly IDeleteCategory _deletecategory;
 
-        public CategoryController(IShowCategories shcategories, IShowCategoryGood shcategorygood, IShowCategory shcategory, IAddCategory addcategory, IEditCategory editcatogry, IDelete deletecategory)
+        public CategoryController(IShowCategories shcategories, IShowCategoryGood shcategorygood, IShowCategory shcategory, IAddCategory addcategory, IEditCategory editcatogry, IDeleteCategory deletecategory)
         {
             _shcategories = shcategories;
             _shcategorygood = shcategorygood;
@@ -35,6 +35,12 @@ namespace Api.Controllers
             _editcatogry = editcatogry;
             _deletecategory = deletecategory;
         }
+
+
+
+
+
+
 
 
 
@@ -83,7 +89,7 @@ namespace Api.Controllers
 
         // GET: api/Category/5
         [HttpGet("{id}")]
-        public IActionResult Get(int id)
+        public ActionResult<CategoryDto> Get(int id)
         {
             try {
                 var cat = _shcategory.Execute(id);
@@ -110,7 +116,7 @@ namespace Api.Controllers
   
         // POST: api/Category
         [HttpPost]
-        public IActionResult Post([FromBody]AddCategoryDto dto)
+        public ActionResult Post([FromBody]AddCategoryDto dto)
         {
             try
             {
@@ -134,7 +140,7 @@ namespace Api.Controllers
 
         // PUT: api/Category/5
         [HttpPut("{id}")]
-        public IActionResult Put(int id, [FromBody]EditCategory dto)
+        public ActionResult Put(int id, [FromBody]EditCategory dto)
         {
             dto.Id = id;
             try
@@ -160,7 +166,7 @@ namespace Api.Controllers
 
         // DELETE: api/ApiWithActions/5
         [HttpDelete("{id}")]
-        public IActionResult Delete(int id)
+        public ActionResult Delete(int id)
         {
             try
             {

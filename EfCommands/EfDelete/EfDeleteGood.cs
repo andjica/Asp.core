@@ -7,7 +7,7 @@ using EfDataAccess;
 
 namespace EfCommands.EfDelete
 {
-    public class EfDeleteGood : EfBase, IDelete
+    public class EfDeleteGood : EfBase, IDeleteGood
     {
         public EfDeleteGood(AuctionContext context) : base(context)
         {

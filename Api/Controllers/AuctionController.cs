@@ -23,9 +23,9 @@ namespace Api.Controllers
         private readonly IShowAuction _shacution;
         private readonly IEditAuction _editauction;
         private readonly IPaginateAuctions _paginate;
-        private readonly IDelete _deleteauction;
+        private readonly IDeleteAuction _deleteauction;
 
-        public AuctionController(IAddAuction addauction, IShowAuctionGoodAuctioner shall, IShowAuction shacution, IEditAuction editauction, IPaginateAuctions paginate, IDelete deleteauction)
+        public AuctionController(IAddAuction addauction, IShowAuctionGoodAuctioner shall, IShowAuction shacution, IEditAuction editauction, IPaginateAuctions paginate, IDeleteAuction deleteauction)
         {
             _addauction = addauction;
             _shall = shall;
@@ -34,6 +34,7 @@ namespace Api.Controllers
             _paginate = paginate;
             _deleteauction = deleteauction;
         }
+
 
 
 

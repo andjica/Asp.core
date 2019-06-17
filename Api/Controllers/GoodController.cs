@@ -24,17 +24,17 @@ namespace Api.Controllers
         private readonly IShowGood _shgood;
         private readonly IAddGood _addgood;
         private readonly IEditGood _editgood;
-        private readonly IDelete _deletegood;
+        private readonly IDeleteGood _deletegood;
 
-        public GoodController(IShowGoodsCategory shgoodscategory, IShowGood shgood, IAddGood addgood, IEditGood editgood, IDelete deletegood)
+        public GoodController(IShowGoodsCategory shgoodscategory, IShowGood shgood, IAddGood addgood, IEditGood editgood, IDeleteGood deletegood)
         {
-
             _shgoodscategory = shgoodscategory;
             _shgood = shgood;
             _addgood = addgood;
             _editgood = editgood;
             _deletegood = deletegood;
         }
+
 
 
         //Vraca sve proizvode za licitaciju sa kategorijama kojim pripadaju

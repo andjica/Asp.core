@@ -9,6 +9,7 @@ namespace Aplication.Dto.Auction
         public int Id { get; set; }
         public string GoodTtile { get; set; }
         public int GoodId { get; set; }
+        
         public DateTime GoodCreateAt { get; set; }
         public decimal GoodFirstPrice { get; set; }
 

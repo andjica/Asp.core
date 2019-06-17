@@ -25,7 +25,7 @@ namespace EfCommands
                 categories = categories.Where(c => c.Id == request.CategoryId);
             }
 
-            if (request.Active == null)
+            if (request.Active)
             {
                 categories = categories.Where(c => c.IsDeleted == false);
             }

@@ -27,9 +27,9 @@ namespace WebApplication.Controllers
         private readonly IShowAuctioners _shauctionres;
         private readonly IShowGoodsCategory _shgoods;
         private readonly IEditAuction _editacu;
-        private readonly IDelete _delete;
+        private readonly IDeleteAuction _delete;
 
-        public AuctionController(IShowAuctionGoodAuctioner shall, IShWebAuction shone, IAddWebAuction addauction, AuctionContext context, IShowAuctioners shauctionres, IShowGoodsCategory shgoods, IEditAuction editacu, IDelete delete)
+        public AuctionController(IShowAuctionGoodAuctioner shall, IShWebAuction shone, IAddWebAuction addauction, AuctionContext context, IShowAuctioners shauctionres, IShowGoodsCategory shgoods, IEditAuction editacu, IDeleteAuction delete)
         {
             _shall = shall;
             _shone = shone;
@@ -40,6 +40,7 @@ namespace WebApplication.Controllers
             _editacu = editacu;
             _delete = delete;
         }
+
 
 
 

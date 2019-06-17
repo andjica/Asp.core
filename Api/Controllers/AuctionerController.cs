@@ -21,9 +21,9 @@ namespace Api.Controllers
         private readonly IShowAuctioners _shauctioners;
         private readonly IShowAuctioner _shacutioner;
         private readonly IEditAuctioner _editauctioner;
-        private readonly IDelete _deleteauctioner;
+        private readonly IDeleteAuctioner _deleteauctioner;
 
-        public AuctionerController(IAddAuctioner addauctioner, IShowAuctioners shauctioners, IShowAuctioner shacutioner, IEditAuctioner editauctioner, IDelete deleteauctioner)
+        public AuctionerController(IAddAuctioner addauctioner, IShowAuctioners shauctioners, IShowAuctioner shacutioner, IEditAuctioner editauctioner, IDeleteAuctioner deleteauctioner)
         {
             _addauctioner = addauctioner;
             _shauctioners = shauctioners;
@@ -31,6 +31,7 @@ namespace Api.Controllers
             _editauctioner = editauctioner;
             _deleteauctioner = deleteauctioner;
         }
+
 
 
 

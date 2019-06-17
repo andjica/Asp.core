@@ -8,7 +8,7 @@ namespace Aplication.SearchEntity.Category
     {
         public string Keyword { get; set; }
 
-        public bool? Active { get; set; }
+        public bool Active { get; set; }
 
         public int? CategoryId { get; set; }
     }

@@ -47,24 +47,24 @@ namespace WebApplication
             services.AddTransient<IShowCategories, EfShowCategories>();
             services.AddTransient<IShowCategory, EfShowCategory>();
             services.AddTransient<IAddCategory, EfAddCategory>();
-            services.AddTransient<IEditCategory, EfEditCategory>();
+            services.AddTransient<IDeleteCategory, EfDeleteCategory>();
 
 
             services.AddTransient<IAddWebAuction, EfAddWAuction>();
             services.AddTransient<IShowAuctionGoodAuctioner, EfShowAuctionGoodAuctioner>();
             services.AddTransient<IShWebAuction, EfShWebAuction>();
             services.AddTransient<IEditAuction, EfEditAuction>();
-            services.AddTransient<IDelete, EfDeleteAuction>();
+            services.AddTransient<IDeleteAuction, EfDeleteAuction>();
 
             services.AddTransient<IShowAuctioners, EfShowAuctioners>();
             services.AddTransient<IShowGoodsCategory, EfShowGoodsCategory>();
             services.AddTransient<IEditAuction, EfEditAuction>();
-            services.AddTransient<IDelete, EfDeleteAuction>();
+           
 
             services.AddTransient<IShowImages, EfShowImages>();
             services.AddTransient<IAddImage, EfAddImage>();
             services.AddTransient<IShowImage, EfShowImage>();
-            services.AddTransient<IDelete, EfDeleteImage>();
+            services.AddTransient<IDeleteImage, EfDeleteImage>();
 
         }
 
