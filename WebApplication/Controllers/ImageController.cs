@@ -19,15 +19,16 @@ namespace WebApplication.Controllers
         private readonly IAddImage _addimage;
         private readonly IShowImages _shimages;
         private readonly IShowImage _shimage;
-        private readonly IDelete _deleteimage;
+        private readonly IDeleteImage deleteimage;
 
-        public ImageController(IAddImage addimage, IShowImages shimages, IShowImage shimage, IDelete deleteimage)
+        public ImageController(IAddImage addimage, IShowImages shimages, IShowImage shimage, IDeleteImage deleteimage)
         {
             _addimage = addimage;
             _shimages = shimages;
             _shimage = shimage;
-            _deleteimage = deleteimage;
+            this.deleteimage = deleteimage;
         }
+
 
         // GET: Image
         public ActionResult Index([FromQuery]SearchImage search)

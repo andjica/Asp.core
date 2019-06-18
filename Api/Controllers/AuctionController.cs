@@ -11,6 +11,9 @@ using Aplication.Command.Delete;
 using Aplication.Exceptions;
 using Aplication.Dto.Auction;
 using Aplication.SearchEntity.Auction;
+
+using Aplication.Interface;
+
 namespace Api.Controllers
 {
     [Route("api/[controller]")]
@@ -24,8 +27,9 @@ namespace Api.Controllers
         private readonly IEditAuction _editauction;
         private readonly IPaginateAuctions _paginate;
         private readonly IDeleteAuction _deleteauction;
+        private IEmailSender sender;
 
-        public AuctionController(IAddAuction addauction, IShowAuctionGoodAuctioner shall, IShowAuction shacution, IEditAuction editauction, IPaginateAuctions paginate, IDeleteAuction deleteauction)
+        public AuctionController(IAddAuction addauction, IShowAuctionGoodAuctioner shall, IShowAuction shacution, IEditAuction editauction, IPaginateAuctions paginate, IDeleteAuction deleteauction,IEmailSender sender)
         {
             _addauction = addauction;
             _shall = shall;
@@ -33,7 +37,10 @@ namespace Api.Controllers
             _editauction = editauction;
             _paginate = paginate;
             _deleteauction = deleteauction;
+            this.sender = sender;
         }
+
+
 
 
 
@@ -122,11 +129,15 @@ namespace Api.Controllers
         /// </summary>
         // POST: api/Auction
         [HttpPost]
-        public IActionResult Post([FromBody]AddAuctionDto dto)
+        public IActionResult Post([FromQuery]AddAuctionDto dto,string email)
         {
             try
             {
                 _addauction.Execute(dto);
+                sender.Subject = "Kreiranje  aukcije";
+                sender.ToEmail = email;
+                sender.Body = "Uspesno ste kreirali aukciju :)";
+                sender.Send();
                 return Ok();
             }
             catch (EntityNotFound e)

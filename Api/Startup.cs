@@ -23,6 +23,8 @@ using Swashbuckle.AspNetCore.Swagger;
 using Microsoft.EntityFrameworkCore;
 using System.Reflection;
 using System.IO;
+using Api.Email;
+using Aplication.Interface;
 
 namespace Api
 {
@@ -82,16 +84,19 @@ namespace Api
             services.AddTransient<IShowImages, EfShowImages>();
             services.AddTransient<IAddImage, EfAddImage>();
             services.AddTransient<IShowImage, EfShowImage>();
-            services.AddTransient<IDeleteImage, EfDeleteImage>();
+            services.AddTransient<IDeleteImage, EfDeleteImage>(); 
 
             //paginate Auction
             services.AddTransient<IPaginateAuctions, EfPaginateAuction>();
 
+            //email
+            var section = Configuration.GetSection("Email");
+            var sender = new SmtpEmailSender(section["host"], Int32.Parse(section["port"]), section["fromaddress"], section["password"]);
+            services.AddSingleton<IEmailSender>(sender);
 
-            
             // Register the Swagger generator, defining 1 or more Swagger documents
-         
-                services.AddSwaggerGen(c =>
+
+            services.AddSwaggerGen(c =>
                 {
 
                     // Set the comments path for the Swagger JSON and UI.
